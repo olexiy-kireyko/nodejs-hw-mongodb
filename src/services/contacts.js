@@ -15,17 +15,13 @@ export const createContact = async (payload) => {
   return contact;
 };
 
-export const updateContact = async (id, payload, options = {}) => {
-  const rawResult = await ContactsCollection.findOneAndUpdate(
+export const updateContact = async (id, payload) => {
+  const result = await ContactsCollection.findOneAndUpdate(
     { _id: id },
     payload,
-    { new: true, includeResultMetadata: true, ...options },
+    { new: true },
   );
-  if (!rawResult || !rawResult.value) return null;
-  return {
-    contact: rawResult.value,
-    isNew: Boolean(rawResult?.lastErrorObject?.upserted),
-  };
+  return result;
 };
 
 export const deleteContact = async (id) => {
