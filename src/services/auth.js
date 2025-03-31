@@ -43,7 +43,7 @@ export const registerUser = async (payload) => {
 export const loginUser = async (payload) => {
   const user = await UsersCollection.findOne({ email: payload.email });
   if (!user) throw createHttpError(401, 'user dont exist');
-  const isEqual = bcrypt.compare(payload.password, user.password);
+  const isEqual = await bcrypt.compare(payload.password, user.password);
   if (!isEqual) throw createHttpError(401, 'unauthorised');
 
   const session = await SessionsCollection.findOne({ userId: user._id });
