@@ -724,17 +724,6 @@
             "cookieAuth": []
           }
         ],
-        "parameters": [
-          {
-            "in": "cookie",
-            "name": "refreshToken",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "example": "mBo6l6mBTYSrpy3muDFaBW9lN+PtnDsHaADppQ71"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "refreshed user's session",
@@ -801,17 +790,6 @@
         "security": [
           {
             "cookieAuth": []
-          }
-        ],
-        "parameters": [
-          {
-            "in": "cookie",
-            "name": "refreshToken",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "example": "I8pFv8krW8u%2Bj2ZnpsNfRMADUQNCILbg0XLp2lvT"
-            }
           }
         ],
         "responses": {
