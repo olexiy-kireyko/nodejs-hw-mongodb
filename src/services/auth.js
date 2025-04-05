@@ -83,6 +83,8 @@ export const logoutUser = async (refreshToken) => {
   const session = await SessionsCollection.findOne({
     refreshToken,
   });
+  if (!session) throw createHttpError(401, 'session not found');
+
   await SessionsCollection.deleteOne({ _id: session._id, refreshToken });
 };
 
