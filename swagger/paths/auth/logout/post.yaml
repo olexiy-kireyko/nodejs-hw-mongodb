@@ -7,14 +7,6 @@ description: 'Logout user with cookies'
 security:
   - cookieAuth: []
 
-parameters:
-  - in: cookie
-    name: refreshToken
-    required: true
-    schema:
-      type: string
-      example: I8pFv8krW8u%2Bj2ZnpsNfRMADUQNCILbg0XLp2lvT
-
 responses:
   '204':
     description: logout user
