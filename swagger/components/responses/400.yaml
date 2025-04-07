@@ -25,12 +25,34 @@ content:
               example: 'bad request'
             errors:
               type: array
-              example: [
-      {
-        'message': '"password" is required',
-        'path': ['password'],
-        'type': 'any.required',
-        'context': { 'label': 'password', 'key': 'password' },
-      }
-    ]
-
+              items:
+                type: object
+                required:
+                  - message
+                  - path
+                  - type
+                  - context
+                properties:
+                  message:
+                    type: string
+                    example: '"requestFieldName" is required'
+                  path:
+                    type: array
+                    items:
+                      type: string
+                      example: requestFieldName
+                  type:
+                    type: string
+                    example: any.required
+                  context:
+                    type: object
+                    required:
+                      - label
+                      - key
+                    properties:
+                      label:
+                        type: string
+                        example: requestFieldName
+                      key:
+                        type: string
+                        example: requestFieldName
