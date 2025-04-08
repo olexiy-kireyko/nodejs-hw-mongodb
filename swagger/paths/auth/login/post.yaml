@@ -58,7 +58,11 @@ responses:
           example: refreshToken=I8pFv8krW8u%2Bj2ZnpsNfRMADUQNCILbg0XLp2lvT
 
   '400':
-    $ref: '../../../components/responses/400.yaml'
+    description: Bad request error
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/responses/schemas/400.yaml
   '401':
     $ref: '../../../components/responses/401.yaml'
   '500':

@@ -2,6 +2,8 @@ const parseIsFavourite = (isFavourite) => {
   const isString = typeof isFavourite === 'string';
   if (!isString) return;
   if (isFavourite === 'true') return true;
+  if (isFavourite === 'false') return false;
+  return;
 };
 
 const parseType = (type) => {

@@ -41,7 +41,11 @@ responses:
             data:
               type: object
   '400':
-    $ref: '../../../components/responses/400.yaml'
+    description: Bad request error
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/responses/schemas/400.yaml
   '404':
     $ref: '../../../components/responses/404.yaml'
   '500':

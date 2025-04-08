@@ -28,7 +28,12 @@ responses:
               type: integer
               example: 204
   '400':
-    $ref: '../../../components/responses/400.yaml'
+    description: Bad request error
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/responses/schemas/400invalidId.yaml
+
   '401':
     $ref: '../../../components/responses/401.yaml'
   '404':
